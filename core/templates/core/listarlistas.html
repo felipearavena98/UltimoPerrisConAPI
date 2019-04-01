@@ -1,0 +1,75 @@
+{%extends 'core/base.html'%}
+{%block content%}
+{% load static %}
+<link rel="stylesheet" href="static/core/css/style.css">
+<body>
+    
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID LISTA</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">Total de productos</th>
+                <th scope="col">Productos comprados</th>
+                <th scope="col">Presupuesto</th>
+                <th scope="col">Total real</th>
+                <th scope="col">Ver lista</th>
+                <th scope="col">Eliminar producto</th>
+                <th scope="col">Modificar producto</th>
+            </tr>
+        </thead>
+        <tbody> 
+            {%for i in lista%}
+                {%if user.email == i.correo%}
+                    <tr>
+                        <td>{{i.idLista}}</td>
+                        <td>{{i.nombre}}</td>
+                        <td>{%for p in pubs%}
+                                {%if i.idLista == p.idLista%}
+                                    {{p.num_prod}}
+                                {%endif%}
+                            {%endfor%}</td>
+                        <td>{%for c in compr%}
+                                {%if i.idLista == c.idLista%}
+                                    {{c.comprados}}
+                                {%endif%}
+                            {%endfor%}
+                        </td>
+                        <td>{%for t in total_pre%}
+                                {%if i.idLista == t.idLista%}
+                                    {{t.sum_prod}}
+                                {%endif%}
+                            {%endfor%}</td>
+                        <td>{%for t in total_rea%}
+                                {%if i.idLista == t.idLista%}
+                                    {{t.sum_prod}}
+                                {%endif%}
+                            {%endfor%}</td>
+                        <td>
+                            <form action="listarproductofiltro" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="idLista" value="{{i.idLista}}" />
+                                <button type="button submit" class="btn btn-primary">Ver lista</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="eliminarlista" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="idLista" value="{{i.idLista}}" />
+                                <button type="button submit" class="btn btn-primary">Eliminar</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="modificarlista" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="idLista" value="{{i.idLista}}" />
+                                <input class="btn btn-success" name="btnAccion" type="submit" value="Modificar" formnovalidate/>
+                            </form>
+                        </td>
+                    </tr>
+                {%endif%}
+            {%endfor%}
+        </tbody>  
+    </table>
+</body>
+{%endblock%}

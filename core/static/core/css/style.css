@@ -1,0 +1,290 @@
+/* Etiqueta body - estilos */
+body{
+    font: 15px Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: floralwhite;
+}
+
+/*Estilos Globales */
+.contenedor{
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+
+h1{
+    padding: 10px;
+}
+
+/*Encabezado (NAV) */
+header{
+    background-color:rgb(37, 175, 143);
+    color: white;
+    padding-top: 3px;
+    min-height: 70px;
+}
+/*Configuracion de texto del nav*/
+header a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px;
+}
+
+header #marca{
+    float: left;
+    vertical-align: middle;
+}
+header #marca h1{
+    margin: 0;
+    vertical-align: middle;
+}
+/*
+header nav{
+    float: right;
+    margin-top: 1px;
+    padding-right: 20px;
+    padding-top: 1.2em;
+}
+*/
+header .resaltado, header .actual a{
+    color: blue;
+    font-weight: bold;
+}
+header a:hover{
+    color: #ccc;
+    font-weight: bold;
+}
+/*Cabecera*/
+.perro{
+    width: 1000px;
+    height: 370px;
+}
+/*CONTENEDORES DE TEXTO*/
+#contenedort1{
+    text-align: center;
+    padding: 10px;
+}
+
+#botLog{
+    padding: 10px;
+}
+
+#divLogin{
+    width: 200px;
+    height: 500px;
+    margin: 0 auto;
+    padding-top: 5%;
+    text-align: center;
+}
+
+#divListar{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#divForm{
+    width: 80%;
+    margin: 0 auto;
+}
+
+#titTabla{
+    color: black;
+}
+
+#izquierda{
+    padding: 10px;
+    float: left;
+    text-align: left;
+    font-size: 20px;
+    font-family: Franklin Gothic Medium;
+    color: white;    
+}
+#centro{
+    text-align: right;
+    display: inline-block;
+    font-size: 20px;
+    font-family: Franklin Gothic Medium;
+    color: white;    
+}
+#derecha{
+    float:right;
+}
+.icons{
+    width: 50px;
+    height: 50px;
+}
+#fuente1{
+    font-size: 20px;
+    font-family: Franklin Gothic Medium;
+    color: white;
+}
+/*Segundo contenedor imagenes y texto*/
+.colorfondo2{
+    background-size: 100%;
+    background: white;
+}
+#contenedor2{
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+}
+#contenedor2 .C,#contenedor2 .D{
+    display: inline-block;
+    margin: 0% auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#contenedor2 .C{
+    text-align: right;
+    padding-right: 1px;
+}
+#contenedor2 .D{
+    text-align: left;
+    padding-left: 1px;
+}
+.imagena{
+    width: 250px;
+    height: 150px;
+}
+.imagenb{
+    width: 200px;
+    height: 200px;
+}
+article p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #33B99A;
+    font-weight: bold;
+}
+samp{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+.hr1{
+    width: 50px;
+    height: 2px;
+    border: 0;
+    background-color: red;
+    margin:0;
+    float: right;
+}
+.hr2{
+    width: 50px;
+    height: 2px;
+    border: 0;
+    background-color: red;
+    margin:0;
+    float: left;
+}
+/*BOTON */
+.boton{
+    height: 38px;
+    background:white;
+    border: 20;
+    padding-left: 20px;
+    padding-right: 20px;
+    color:black;
+}
+/*footer*/
+footer{
+    background: #D3D3D3;
+}
+
+#footP{
+    text-align: center;
+}
+
+#footH{
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+}
+
+#titulogaleria{
+    padding-left: 37%;
+    color: #ffffff;
+}
+
+#fotoR{
+  object-fit: cover;
+  object-position: 50% 0;
+  width: 200px;
+  height: 200px;    
+}
+
+#subt{
+    text-align: center;
+}
+
+#subtImg{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+}
+
+#imgcarousel{
+    width: 70%;
+    height: auto;
+}
+
+#perrisHead{
+    vertical-align: middle;
+    padding: 5px;
+}
+
+#botonC {
+    background-color: white;
+    color: black;
+    border: 2px solid #33B99A;
+    padding: 13px 28px;
+    text-align: center;
+}
+
+#botonC {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#botonC:hover {
+    background-color: #33B99A;
+    color: black;
+}
+.modal-title{
+    color: black;
+}
+
+.modal-body{
+    color: black;
+}
+
+/*
+.navbar{
+    padding: 1.5rem 6rem;
+    padding-top: 1.5rem;
+    padding-right: 6rem;
+    padding-bottom: 1.5rem;
+    padding-left: 6rem;
+}
+*/
+
+@media (max-width:300px){
+    #contenedor2{
+        height: auto;
+    }
+    .C .D {
+        text-align: justify;
+        width: 100%;
+        float: top;
+        margin: 0;
+        padding-left: 500px;
+        clear:both;
+    }
+}
+a.nounderline:link 
+{ 
+    text-decoration:none; 
+} 

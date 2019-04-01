@@ -1,0 +1,16 @@
+{
+    "name": "Listas de compras",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "blue",
+    "description": "Aplicacion de lista de compras",
+    "short_name": "ListasDeCompras",
+    "orientation": "landscape",
+    "theme_color": "blue",
+    "icons": [
+    {
+      "src": "img/imagen3jpg.jpg",
+      "sizes": "200x200 100x100 60x60 40x40 20x20"
+    }
+  ]
+}

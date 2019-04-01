@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    {% load static %}
+        <link rel="stylesheet" href="static/core/css/style.css">
+<h1 id=titTabla>Modificar producto</h1>
+{%if mensaje%}
+<div class="alert alert-success" role="alert">
+    Actualizacion exitosa.
+</div>
+{%endif%}
+<div id=divForm>
+<form method="POST">                    
+    {%csrf_token%}
+        <div class="form-group">
+                <input class="form-control" type="hidden" name="idProducto" value="{{prod.idProducto}}" required/>
+        </div>
+        <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input class="form-control" type="text" name="nombre" value="{{prod.nombre}}" required/>
+        </div>
+        <div class="form-group">
+                <label for="costoPresupuesto">Costo presupuesto:</label>
+                <input class="form-control" type="number" name="costoPresupuesto" value="{{prod.costoPresupuesto}}" required/>
+        </div>
+        <div class="form-group">
+                <label for="costoReal">Costo real:</label>
+                <input class="form-control" type="number" name="costoReal" value="{{prod.costoReal}}" required/>
+        </div>
+        <div class=form-group>
+                <label for="notas">Notas:</label>
+                <input class="form-control" type="text" name="notas" value="{{prod.notas}}" required/>
+        </div>
+        <div class=form-group>
+            <label for="estado">Estado:</label>
+            <select class="form-control" name="estado">
+                <option value="{{prod.estado}}" selected>{{prod.estado}}</option>
+                {%if prod.estado == "Pendiente"%}
+                    <option value="Comprado">Comprado</option>
+                {%endif%}
+                {%if prod.estado == "Comprado" %}
+                    <option value="Pendiente">Pendiente</option>
+                {%endif%}
+            </select>
+        </div>  
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="btnAccion" class="btn btn-primary" value="Editar">
+                <input type="reset" class="btn btn-dark" value="Limpiar">
+            </td>
+        </tr>
+    </table>
+</form>
+<br>
+</div>
+{%endblock%}

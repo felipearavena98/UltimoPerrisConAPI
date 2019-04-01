@@ -1,0 +1,48 @@
+{%extends 'core/base.html'%}
+{%block content%}
+{% load static %}
+<link rel="stylesheet" href="static/core/css/style.css">
+<body>
+    
+    <table class="table table-hover table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID PRODUCTO</th>
+                <th scope="col">NOMBRE</th>
+                <th scope="col">Costo Presupuesto</th>
+                <th scope="col">Costo Real</th>
+                <th scope="col">Notas</th>
+                <th scope="col">Tienda</th>
+                <th scope="col">Eliminar producto</th>
+                <th scope="col">Modificar producto</th>
+            </tr>
+        </thead> 
+        <tbody> 
+            {%for i in productos%}
+            <tr>
+                <td>{{i.idProducto}}</td>
+                <td>{{i.nombre}}</td>
+                <td>{{i.costoPresupuesto}}</td>
+                <td>{{i.costoReal}}</td>
+                <td>{{i.notas}}</td>
+                <td>{{i.idTienda}}</td>
+                <td>
+                    <form action="eliminarproducto" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="idProducto" value="{{i.idProducto}}" />
+                        <button type="button submit" class="btn btn-primary">Eliminar</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="modificarproducto" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="idProducto" value="{{i.idProducto}}" />
+                        <input class="btn btn-success" name="btnAccion" type="submit" value="Modificar" formnovalidate/>
+                    </form>
+                </td>
+            </tr>
+            {%endfor%}
+        </tbody>  
+    </table>
+</body>
+{%endblock%}

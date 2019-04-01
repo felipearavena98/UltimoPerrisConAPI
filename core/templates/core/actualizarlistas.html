@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    {% load static %}
+        <link rel="stylesheet" href="static/core/css/style.css">
+<h1 id=titTabla>Modificar lista</h1>
+{%if mensaje%}
+<div class="alert alert-success" role="alert">
+    Actualizacion exitosa.
+</div>
+{%endif%}
+<div id=divForm>
+<form method="POST">                    
+    {%csrf_token%}
+        <div class="form-group">
+                <input class="form-control" type="hidden" name="idLista" value="{{lista.idLista}}" required/>
+        </div>
+        <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input class="form-control" type="text" name="nombre" value="{{lista.nombre}}" required/>
+        </div>
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="btnAccion" class="btn btn-primary" value="Editar">
+                <input type="reset" class="btn btn-dark" value="Limpiar">
+            </td>
+        </tr>
+    </table>
+</form>
+<br>
+</div>
+{%endblock%}

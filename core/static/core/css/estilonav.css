@@ -1,0 +1,17 @@
+nav.navbar ul.nav li {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+nav.navbar {
+    background-color: #002b07;
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+    .collapse {
+        display: none !important;
+    }
+ }
+
+.texto {
+    color: #ffffff;
+}
